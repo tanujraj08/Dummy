@@ -28,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
     private Button mWhatsapp;
     private FirebaseFirestore mFirestore;
     private QuestionListAdapter questionListAdapter;
-
+    public String str;
     private List<Questions> questionList;
 
 
@@ -53,7 +53,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent=new Intent(Main2Activity.this, Twiliosms.class);
-                intent.putExtra(SyncStateContract.Constants.QUERY,query)
+                intent.putExtra("DATA",str);
                 startActivity(intent);
             }
         });
@@ -73,7 +73,7 @@ public class Main2Activity extends AppCompatActivity {
 
                         Questions questions=doc.getDocument().toObject(Questions.class);
                         questionList.add(questions);
-
+                        str = str + " " + questions.getQuery();
                         questionListAdapter.notifyDataSetChanged();
                     }
 

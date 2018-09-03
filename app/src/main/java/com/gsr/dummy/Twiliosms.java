@@ -52,7 +52,9 @@ public class Twiliosms extends Main2Activity {
         mBody = findViewById(R.id.Msg_text);
         mSend = findViewById(R.id.send);
         mContext = getApplicationContext();
-
+        String str2 = getIntent().getStringExtra("DATA");
+        mBody.setText(str2);
+        
 
 
 

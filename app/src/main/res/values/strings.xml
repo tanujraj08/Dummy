@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dummy</string>
+    <string name="backend_url">https://dummyproject1.herokuapp.com/</string>
+</resources>
